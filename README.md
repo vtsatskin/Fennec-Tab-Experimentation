@@ -22,6 +22,25 @@ and swipe your finger to "hover" over each tab interface. This hovering allows
 the user to quickly switch between recent tabs in one motion. In addition, tabs
 can be previewed quickly.
 
-![](img/screenshots/tab.drawer.experimental.png)
+- [Visual design mockups](design/mockup.png) (large file)
 
-Note: the screenshot presented is not a final designed version, only a rough draft.
+![](design/tab.drawer.png)
+
+## TODO
+
+- Include video of quick tab switching.
+- HTML Demo
+  - Move to github pages for easier linking.
+  - Implement private and sync tab switching
+  - Work out animation for spatially rearranging tabs when switching tabs.
+
+## Contributors
+
+The following people contributed in some capacity to the idea generation,
+discussion, and prototyping of this interface. They are listed in alphabetical
+order to preserve contribution neutrality.
+
+- [Josh](https://github.com/gerfuls)
+- [Sola](https://github.com/sola92)
+- [Val](https://github.com/vtsatskin)
+- [Vic](https://github.com/VicV)
