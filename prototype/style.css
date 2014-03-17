@@ -34,15 +34,6 @@
     margin-left: -176px;
   }
 
-.tabs {
-  background-color: rgba(0, 0, 0, 0.6);
-  height: 425px;
-  width: 100%;
-  margin-top: 36px;
-
-  transition: all 0.2s ease;
-}
-
 .hidden {
   opacity: 0;
 }
@@ -79,4 +70,28 @@
 .menu {
   background-image: url('menu.button.png');
   transition: all 0.1s ease;
+}
+
+/* Tabs */
+
+
+.tabs {
+  background-color: rgba(0, 0, 0, 0.6);
+  height: 425px;
+  width: 260px; /* 270px adjusted for padding */
+  margin-top: 36px;
+  transition: all 0.2s ease;
+  padding: 5px;
+}
+
+.tab {
+  width: 127px;
+  height: 98px;
+  background-image: url('marketplace.tab.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  float: right;
+  clear: both;
+  margin-bottom: 10px;
 }
