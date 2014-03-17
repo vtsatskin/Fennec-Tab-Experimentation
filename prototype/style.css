@@ -39,7 +39,6 @@
 }
 
 
-
 /* Buttons */
 
 .button {
@@ -75,8 +74,8 @@
     transition-delay: 0s;
   }
 
-/* Tabs */
 
+/* Tabs */
 
 .tabs-overlay {
   background-color: rgba(0, 0, 0, 0.6);
