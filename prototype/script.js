@@ -29,6 +29,10 @@ document.addEventListener("DOMContentLoaded", function() {
     addTabButton.classList.toggle("hidden");
   };
 
+  var closeTab = function(tab) {
+    tabsContainer.removeChild(tab);
+  };
+
   // Event listeners
 
   openTabButton.addEventListener("click", toggleTabs);
@@ -44,15 +48,30 @@ document.addEventListener("DOMContentLoaded", function() {
   tabsContainer.addEventListener("click", function(event) {
     var classList =  event.target.classList;
 
-    if(classList.contains("new-tab")) {
+    var clickedOnClose = function() {
+      // Distances from top-left corner of tab
+      var tabX = event.clientX - event.target.offsetLeft;
+      var tabY = event.clientY - event.target.offsetTop;
+
+      return tabX >= 120 && tabY <= 25;
+    };
+
+    var isNewTab = classList.contains("new-tab");
+    var isTab = classList.contains("tab");
+
+    if((isNewTab || isTab) && clickedOnClose()) {
+      closeTab(event.target);
+    }
+    else if(isNewTab) {
       contentContainer.classList.add("home");
       toggleTabs();
     }
-    else if(classList.contains("tab")) {
+    else if(isTab) {
       contentContainer.classList.remove("home");
       toggleTabs();
     }
     else if(classList.contains("tabs")) {
+      // Clicked somewhere where there is no tab.
       toggleTabs();
     }
   });
