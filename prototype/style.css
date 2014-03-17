@@ -53,24 +53,27 @@
 
 .open-tabs {
   background-image: url('tab.button.png');
-  transition: all 0.1s ease;
 }
 
 .add-tab {
   background-image: url('new.tab.png');
-  transition: all 0.1s ease;
-  transition-delay: 0.1s;
 }
   .add-tab.hidden {
     margin-right: -100px;
-    transition: all 0.1s ease;
-    transition-delay: 0s;
   }
 
 .menu {
   background-image: url('menu.button.png');
-  transition: all 0.1s ease;
 }
+
+.button {
+  transition: all 0.1s ease;
+  transition-delay: 0.1s;
+}
+  .button.hidden {
+    transition: all 0.1s ease;
+    transition-delay: 0s;
+  }
 
 /* Tabs */
 
