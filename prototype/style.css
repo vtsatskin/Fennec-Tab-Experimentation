@@ -1,0 +1,82 @@
+.device {
+  width: 270px;
+  height: 480px;
+  background: url('base.png');
+  background-size: contain;
+  overflow: hidden;
+  position: relative;
+}
+
+.toolbar {
+  padding-top: 19px;
+}
+
+.system-buttons {
+  background-image: url('system.buttons.png');
+  width: 270px;
+  height: 36px;
+
+  background-size: cover;
+  position: absolute;
+  bottom: 0;
+}
+
+.location-bar {
+  width: 220px;
+  height: 36px;
+  background: url('location.bar.png');
+  background-size: cover;
+  float: left;
+
+  transition: all 0.2s ease-out;
+}
+  .location-bar.small {
+    margin-left: -176px;
+  }
+
+.tabs {
+  background-color: rgba(0, 0, 0, 0.6);
+  height: 425px;
+  width: 100%;
+  margin-top: 36px;
+
+  transition: all 0.2s ease;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+
+
+/* Buttons */
+
+.button {
+  width: 17px;
+  height: 17px;
+  background-size: cover;
+  float: right;
+  margin-top: 8px;
+  margin-right: 8px;
+}
+
+.open-tabs {
+  background-image: url('tab.button.png');
+  transition: all 0.1s ease;
+}
+
+.add-tab {
+  background-image: url('new.tab.png');
+  transition: all 0.1s ease;
+  transition-delay: 0.1s;
+}
+  .add-tab.hidden {
+    margin-right: -100px;
+    transition: all 0.1s ease;
+    transition-delay: 0s;
+  }
+
+.menu {
+  background-image: url('menu.button.png');
+  transition: all 0.1s ease;
+}
