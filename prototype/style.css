@@ -75,7 +75,7 @@
 /* Tabs */
 
 
-.tabs {
+.tabs-overlay {
   background-color: rgba(0, 0, 0, 0.6);
   height: 425px;
   width: 260px; /* 270px adjusted for padding */
@@ -84,16 +84,75 @@
   padding: 5px;
 }
 
+.tabs {
+  height: 425px;
+  transition: all 0.25s ease;
+}
+  .tabs.hidden {
+    margin-top: -425px;
+  }
+
 .tab {
   width: 127px;
   height: 98px;
   background: url('marketplace.tab.png');
   background-size: contain;
   background-repeat: no-repeat;
-
-  float: right;
-  clear: both;
   margin-bottom: 10px;
+
+  /* A hack to get the tabs on the right side.
+     We're not using a float because it messes with the animations.
+     We're not using text-align because it doesn't work. */
+  margin-left: 132px;
+}
+
+.tab-created {
+  animation: slideDown 0.25s ease forwards;
+  opacity: 0;
+}
+
+.tab-removed {
+  animation: slideRight 0.25s ease forwards;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    height: 0;
+    width: 127px;
+    transform: scale(0);
+  }
+
+  50% {
+    height: 98px;
+    width: 127px;
+    transform: scale(1);
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideRight {
+  0% {
+    opacity: 1;
+    margin-right: 0;
+  }
+
+  50% {
+    opacity: 0;
+    margin-left: 332px;
+    margin-right: -200px;
+    scale(1);
+  }
+
+  100% {
+    margin-left: 332px;
+    margin-right: -200px;
+    height: 0;
+    scale(0);
+  }
 }
 
 .new-tab {

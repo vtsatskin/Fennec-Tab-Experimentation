@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function() {
   var openTabButton = document.querySelector(".open-tabs");
   var menuButton = document.querySelector(".menu");
   var locationBar = document.querySelector(".location-bar");
+  var tabsOverlay = document.querySelector(".tabs-overlay");
   var tabsContainer = document.querySelector(".tabs");
   var addTabButton = document.querySelector(".add-tab");
   var contentContainer = document.querySelector(".content");
@@ -12,17 +13,25 @@ document.addEventListener("DOMContentLoaded", function() {
     var tab = document.createElement("div");
     tab.classList.add("tab");
     tab.classList.add("new-tab");
+    tab.classList.add("tab-created");
     tabsContainer.insertBefore(tab, tabsContainer.firstChild);
 
     // There should be tab slide animation, but it's not working.
     window.setTimeout(function() {
       contentContainer.classList.add("home");
       toggleTabs();
-    }, 100);
+    }, 250);
+
+    tab.addEventListener("animationend", function() {
+      tab.classList.remove("tab-created");
+    });
   };
 
   var toggleTabs = function() {
+    // startTabAnimation();
+
     locationBar.classList.toggle("small");
+    tabsOverlay.classList.toggle("hidden");
     tabsContainer.classList.toggle("hidden");
     openTabButton.classList.toggle("hidden");
     menuButton.classList.toggle("hidden");
@@ -30,7 +39,10 @@ document.addEventListener("DOMContentLoaded", function() {
   };
 
   var closeTab = function(tab) {
-    tabsContainer.removeChild(tab);
+    tab.classList.add("tab-removed");
+    tab.addEventListener("animationend", function() {
+        // tabsContainer.removeChild(tab);
+    }, false);
   };
 
   // Event listeners
@@ -45,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   addTabButton.addEventListener("click", newTab);
 
-  tabsContainer.addEventListener("click", function(event) {
+  tabsOverlay.addEventListener("click", function(event) {
     var classList =  event.target.classList;
 
     var clickedOnClose = function() {
