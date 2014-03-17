@@ -87,11 +87,20 @@
 .tab {
   width: 127px;
   height: 98px;
-  background-image: url('marketplace.tab.png');
+  background: url('marketplace.tab.png');
   background-size: contain;
   background-repeat: no-repeat;
 
   float: right;
   clear: both;
   margin-bottom: 10px;
+}
+
+.new-tab {
+  background-image: url('new.tab.preview.png');
+}
+
+.content.home {
+  background-image: url('home.content.png');
+  background-size: contain;
 }
