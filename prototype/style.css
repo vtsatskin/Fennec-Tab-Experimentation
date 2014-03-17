@@ -89,7 +89,7 @@
   transition: all 0.25s ease;
 }
   .tabs.hidden {
-    margin-top: -425px;
+    margin-left: 260px;
   }
 
 .tab {
