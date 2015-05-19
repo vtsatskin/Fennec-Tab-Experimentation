@@ -23,7 +23,7 @@ the user to quickly switch between recent tabs in one motion. In addition, tabs
 can be previewed quickly.
 
 - [Visual design mockups](design/mockup.png) (large file)
-- [Demo](https://vtsatskin.github.io/Fennec-New-Tab-Experimentation/prototype/)
+- [Demo](https://vtsatskin.github.io/Fennec-Tab-Experimentation/prototype/)
  (note: currently only works in Firefox)
 
 ![](design/tab.drawer.png)
